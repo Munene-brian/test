@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to test environment (requires approval)
-        environment: test
-        run: |
-          echo "Deploying code to the test environment..."
-          # Your deployment or validation commands here
+      # - name: Deploy to test environment (requires approval)
+      #   environment: "test"
+      #   run: |
+      #     echo "Deploying code to the test environment..."
+      #     # Your deployment or validation commands here
