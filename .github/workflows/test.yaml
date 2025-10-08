@@ -1,0 +1,20 @@
+name: PR Close Approval for Test Environment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  require-approval:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to test environment (requires approval)
+        environment: test
+        run: |
+          echo "Deploying code to the test environment..."
+          # Your deployment or validation commands here
